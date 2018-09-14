@@ -1,0 +1,47 @@
+{
+  "name": "@wizishop/api-v3-js-sdk",
+  "version": "1.0.0",
+  "description": "A Typescript client (browser) for api-doc.wizishop.com",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WiziShop/api-v3-js-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WiziShop/api-v3-js-sdk/issues"
+  },
+  "homepage": "https://github.com/WiziShop/api-v3-js-sdk#readme",
+  "scripts": {
+    "start": "tsc -w",
+    "lint": "tslint -p tsconfig.json",
+    "export-modules": "ts-node ./scripts/export-all-module.ts",
+    "tsc": "tsc",
+    "build": "npm run export-modules && rm -rf dist && npm run tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "Wizishop",
+    "API",
+    "Client",
+    "Typescript",
+    "Javascript"
+  ],
+  "author": "WiziShop",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/glob": "^5.0.35",
+    "@types/node": "^10.9.4",
+    "glob": "^7.1.3",
+    "tslint": "^5.11.0"
+  },
+  "dependencies": {
+    "rxjs": "^6.3.2",
+    "typescript": "^2.9.2"
+  },
+  "peerDependencies": {
+    "rxjs": "^6.3.2",
+    "typescript": "^2.9.2"
+  }
+}
