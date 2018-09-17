@@ -4,3 +4,4 @@ tslint.json
 .editorconfig
 .gitignore
 scripts
+.idea
