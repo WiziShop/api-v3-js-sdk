@@ -1,7 +1,7 @@
 import { catchError, map, share } from 'rxjs/operators';
 import { ajax, AjaxRequest, AjaxResponse } from 'rxjs/ajax';
 import { JwtService } from './jwt.service';
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY, Observable, throwError } from 'rxjs';
 import { RefreshTokenDto } from '..';
 
 export class WiziApiService {
@@ -13,20 +13,20 @@ export class WiziApiService {
   static apiBaseUrl = 'https://api.wizishop.com/v3';
 
   static handleError(err: any) {
-    return err;
+    return throwError(err);
   }
 
   static setToken(token: string) {
-    WiziApiService.token = token;
+    this.token = token;
   }
 
   static getToken() {
-    return WiziApiService.token;
+    return this.token;
   }
 
   static refreshTokenIfExpiresSoon(offsetDays = 5): Observable<RefreshTokenDto> {
     if (this.token && JwtService.isTokenExpired(this.token, offsetDays * 86400)) {
-      return WiziApiService.get<RefreshTokenDto>('/auth/refresh_token')
+      return this.get<RefreshTokenDto>('/auth/refresh_token')
         .pipe(map(dto => {
           this.setToken(dto.token);
           return dto;
@@ -81,7 +81,7 @@ export class WiziApiService {
     request.responseType = 'json';
 
     if (this.token) {
-      request.headers['Authorization'] = 'Bearer ' + WiziApiService.token;
+      request.headers['Authorization'] = 'Bearer ' + this.token;
     }
 
     const observableKey = this.getObservableKey(url, request.method, request.body, request.headers);
