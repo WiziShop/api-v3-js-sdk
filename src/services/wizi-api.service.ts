@@ -1,5 +1,8 @@
 import { catchError, map, share } from 'rxjs/operators';
 import { ajax, AjaxRequest, AjaxResponse } from 'rxjs/ajax';
+import { JwtService } from './jwt.service';
+import { EMPTY, Observable } from 'rxjs';
+import { RefreshTokenDto } from '..';
 
 export class WiziApiService {
 
@@ -19,6 +22,32 @@ export class WiziApiService {
 
   static getToken() {
     return WiziApiService.token;
+  }
+
+  static refreshTokenIfExpiresSoon(offsetDays = 5): Observable<RefreshTokenDto> {
+    if (this.token && JwtService.isTokenExpired(this.token, offsetDays * 86400)) {
+      return WiziApiService.get<RefreshTokenDto>('/auth/refresh_token');
+    }
+
+    return EMPTY;
+  }
+
+  static getPayloadFromToken(token: string) {
+    if (token) {
+      try {
+        return JwtService.decodeToken(token);
+      } catch (e) {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  static getPayload() {
+    if (this.token) {
+      return this.getPayloadFromToken(this.token);
+    }
+    return null;
   }
 
   private static getObservableKey(method: string, url: string, body?: any, headers?: any) {
