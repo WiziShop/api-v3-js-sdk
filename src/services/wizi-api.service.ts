@@ -26,7 +26,11 @@ export class WiziApiService {
 
   static refreshTokenIfExpiresSoon(offsetDays = 5): Observable<RefreshTokenDto> {
     if (this.token && JwtService.isTokenExpired(this.token, offsetDays * 86400)) {
-      return WiziApiService.get<RefreshTokenDto>('/auth/refresh_token');
+      return WiziApiService.get<RefreshTokenDto>('/auth/refresh_token')
+        .pipe(map(dto => {
+          this.setToken(dto.token);
+          return dto;
+        }));
     }
 
     return EMPTY;
@@ -63,7 +67,7 @@ export class WiziApiService {
   }
 
 
-  static request<T>(url: string, request: AjaxRequest = {}) {
+  static request<T>(url: string, request: AjaxRequest = {}): Observable<T> {
 
 
     request.url = this.apiBaseUrl + url;
@@ -102,7 +106,7 @@ export class WiziApiService {
   }
 
 
-  static get<T>(url: string, params?: any) {
+  static get<T>(url: string, params?: any): Observable<T> {
 
     if (params) {
       const searchParams = new URLSearchParams('');
@@ -119,21 +123,21 @@ export class WiziApiService {
     });
   }
 
-  static post<T>(url: string, body: Object) {
+  static post<T>(url: string, body: Object): Observable<T> {
     return this.request<T>(url, {
       body: JSON.stringify(body),
       method: 'POST'
     });
   }
 
-  static put<T>(url: string, body: Object) {
+  static put<T>(url: string, body: Object): Observable<T> {
     return this.request<T>(url, {
       body: JSON.stringify(body),
       method: 'PUT'
     });
   }
 
-  static delete<T>(url: string) {
+  static delete<T>(url: string): Observable<T> {
     return this.request<T>(url, {
       method: 'DELETE'
     });

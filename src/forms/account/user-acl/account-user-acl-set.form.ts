@@ -1,7 +1,6 @@
 import { Observable } from 'rxjs';
 import { WiziApiService } from '../../../services/wizi-api.service';
 import { UserAccountAclDto } from '../../../dtos/user/account-acl/user-account-acl.dto';
-import { AccountUserDto } from '../../../dtos/account/user/account-user.dto';
 
 
 export class AccountUserAclSetForm {
@@ -11,7 +10,7 @@ export class AccountUserAclSetForm {
     resource: string;
     write_permission: boolean
   }>): Observable<UserAccountAclDto[]> {
-    return WiziApiService.put<AccountUserDto>(`/accounts/${acId}/users/${userId}/acl`, resources);
+    return WiziApiService.put<UserAccountAclDto[]>(`/accounts/${acId}/users/${userId}/acl`, resources);
   }
 
 }
