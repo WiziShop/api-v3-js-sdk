@@ -111,9 +111,12 @@ export class WiziApiService {
     if (params) {
       const searchParams = new URLSearchParams('');
 
-      params.forEach((param, key) => {
-        searchParams.set(key, param);
-      });
+      for (const key in params) {
+        if (params[key]) {
+          searchParams.set(key, params[key]);
+        }
+      }
+
 
       url += '?' + decodeURIComponent(searchParams.toString());
     }
