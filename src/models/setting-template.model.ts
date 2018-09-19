@@ -19,6 +19,7 @@ export class TemplateFileModel implements TemplateFileDto {
     name: string;
     filename: string;
     status: string;
+    last_update: Date;
     type: string;
     contents: Array<TemplateFileContentDto> = [];
 }
