@@ -1,6 +1,6 @@
-import {Observable} from 'rxjs';
-import {WiziApiService} from '../../services/wizi-api.service';
-import {TemplateFileDto} from '../../dtos/template/template-file.dto';
+import { Observable } from 'rxjs';
+import { WiziApiService } from '../../services/wizi-api.service';
+import { TemplateFileDto } from '../../dtos/template/template-file.dto';
 
 export class TemplateDuplicateFileDeleteForm {
 

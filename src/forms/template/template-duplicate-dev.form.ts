@@ -6,7 +6,10 @@ export class TemplateDuplicateDevForm {
 
   static submit(shopId: number, idTpl: number, name: string): Observable<TemplateFolderDto> {
 
-    return WiziApiService.post<TemplateFolderDto>(`/shops/${shopId}/templates/duplicates/devs`, {name: name, id_tpl: idTpl});
+    return WiziApiService.post<TemplateFolderDto>(`/shops/${shopId}/templates/duplicates/devs`, {
+      name: name,
+      id_tpl: idTpl
+    });
   }
 
 }

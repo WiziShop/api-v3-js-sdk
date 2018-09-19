@@ -2,7 +2,7 @@ import { catchError, map, share } from 'rxjs/operators';
 import { ajax, AjaxRequest, AjaxResponse } from 'rxjs/ajax';
 import { JwtService } from './jwt.service';
 import { EMPTY, Observable, throwError } from 'rxjs';
-import { RefreshTokenDto } from '..';
+import { RefreshTokenDto } from '../dtos/auth/refresh-token/refresh-token.dto';
 
 export class WiziApiService {
 

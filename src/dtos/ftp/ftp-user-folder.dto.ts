@@ -1,4 +1,3 @@
-
 export interface FtpUserFolderDto {
   name: string;
   ftp_user_id: string;

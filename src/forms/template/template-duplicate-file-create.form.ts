@@ -1,6 +1,6 @@
-import {Observable} from 'rxjs';
-import {WiziApiService} from '../../services/wizi-api.service';
-import {TemplateFileContentDto} from '../../dtos/template/template-file-content.dto';
+import { Observable } from 'rxjs';
+import { WiziApiService } from '../../services/wizi-api.service';
+import { TemplateFileContentDto } from '../../dtos/template/template-file-content.dto';
 
 export class TemplateDuplicateFileCreateForm {
 
