@@ -16,12 +16,11 @@ import {
   ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS,
   ACCOUNT_USER_RESOURCE_SETTINGS_SHOP,
   ACCOUNT_USER_RESOURCE_SETTINGS_SKIN,
-  ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM,
+  ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM
 } from '../account-user-resource';
 
-
 export type AccountRoleType =
-  'admin'
+  | 'admin'
   | 'in_charge'
   | 'editor'
   | 'logistician'
@@ -75,7 +74,7 @@ export const AccountUserRoleAdminModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS]: true,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SHOP]: true,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SKIN]: true,
-    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: true,
+    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: true
   }
 };
 
@@ -99,7 +98,7 @@ export const AccountUserRoleInChargeModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS]: true,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SHOP]: true,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SKIN]: true,
-    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: true,
+    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: true
   }
 };
 
@@ -123,7 +122,7 @@ export const AccountUserRoleEditorModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SHOP]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SKIN]: false,
-    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false,
+    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false
   }
 };
 
@@ -147,7 +146,7 @@ export const AccountUserRoleLogisticianModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS]: true,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SHOP]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SKIN]: false,
-    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false,
+    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false
   }
 };
 
@@ -171,7 +170,7 @@ export const AccountUserRoleMarketingManagerModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SHOP]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SKIN]: false,
-    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false,
+    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false
   }
 };
 
@@ -195,7 +194,7 @@ export const AccountUserRoleDesignerModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ORDERS_AND_STATS_STATS]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SHOP]: false,
     [ACCOUNT_USER_RESOURCE_SETTINGS_SKIN]: true,
-    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false,
+    [ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM]: false
   }
 };
 
@@ -219,29 +218,6 @@ export const AccountUserRoleCustomModel: AccountUserBaseModel = {
     [ACCOUNT_USER_RESOURCE_ACCOUNT_MY_ACCOUNT]: false,
     [ACCOUNT_USER_RESOURCE_ACCOUNT_MY_SHOP]: false,
     [ACCOUNT_USER_RESOURCE_ACCOUNT_SHOPS]: false,
-    [ACCOUNT_USER_RESOURCE_ACCOUNT_USERS]: false,
+    [ACCOUNT_USER_RESOURCE_ACCOUNT_USERS]: false
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,9 +2,7 @@
 
 declare let escape: any;
 
-
 export class JwtService {
-
   static urlBase64Decode(str: string) {
     let output = str.replace(/-/g, '+').replace(/_/g, '/');
     switch (output.length % 4) {
@@ -18,14 +16,12 @@ export class JwtService {
         break;
       default:
         throw new Error('Illegal base64url string!');
-
     }
 
     return decodeURIComponent(escape(window.atob(output))); // polifyll https://github.com/davidchambers/Base64.js
   }
 
   static decodeToken(token: string) {
-
     if (!token) {
       throw new Error('JWT empty');
     }
@@ -70,6 +66,6 @@ export class JwtService {
       return true;
     }
     // Token expired?
-    return !(date.getTime() > (new Date().getTime() + (offsetSeconds * 1000)));
+    return !(date.getTime() > new Date().getTime() + offsetSeconds * 1000);
   }
 }

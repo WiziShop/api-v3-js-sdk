@@ -8,4 +8,3 @@ export interface TemplateFileDto {
   type: string;
   contents: Array<TemplateFileContentDto>;
 }
-

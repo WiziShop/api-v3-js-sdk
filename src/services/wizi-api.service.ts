@@ -5,7 +5,6 @@ import { EMPTY, Observable, throwError } from 'rxjs';
 import { RefreshTokenDto } from '../dtos/auth/refresh-token/refresh-token.dto';
 
 export class WiziApiService {
-
   private static observableRequests = new Map();
 
   private static token: string;
@@ -24,13 +23,19 @@ export class WiziApiService {
     return this.token;
   }
 
-  static refreshTokenIfExpiresSoon(offsetDays = 5): Observable<RefreshTokenDto> {
-    if (this.token && JwtService.isTokenExpired(this.token, offsetDays * 86400)) {
-      return this.get<RefreshTokenDto>('/auth/refresh_token')
-        .pipe(map(dto => {
+  static refreshTokenIfExpiresSoon(
+    offsetDays = 5
+  ): Observable<RefreshTokenDto> {
+    if (
+      this.token &&
+      JwtService.isTokenExpired(this.token, offsetDays * 86400)
+    ) {
+      return this.get<RefreshTokenDto>('/auth/refresh_token').pipe(
+        map(dto => {
           this.setToken(dto.token);
           return dto;
-        }));
+        })
+      );
     }
 
     return EMPTY;
@@ -54,22 +59,23 @@ export class WiziApiService {
     return null;
   }
 
-  private static getObservableKey(method: string, url: string, body?: any, headers?: any) {
-
+  private static getObservableKey(
+    method: string,
+    url: string,
+    body?: any,
+    headers?: any
+  ) {
     const data = {
       url: url,
       body: body,
       headers: headers,
-      method: method,
+      method: method
     };
 
     return JSON.stringify(data);
   }
 
-
   static request<T>(url: string, request: AjaxRequest = {}): Observable<T> {
-
-
     request.url = this.apiBaseUrl + url;
 
     if (!request.headers) {
@@ -84,20 +90,23 @@ export class WiziApiService {
       request.headers['Authorization'] = 'Bearer ' + this.token;
     }
 
-    const observableKey = this.getObservableKey(url, request.method, request.body, request.headers);
+    const observableKey = this.getObservableKey(
+      url,
+      request.method,
+      request.body,
+      request.headers
+    );
 
     let obs = this.observableRequests.get(observableKey);
 
     if (!obs) {
-      obs = ajax(request)
-        .pipe(
-          map((result: AjaxResponse) => {
-
-            return result.response as T;
-          }),
-          catchError(this.handleError),
-          share()
-        );
+      obs = ajax(request).pipe(
+        map((result: AjaxResponse) => {
+          return result.response as T;
+        }),
+        catchError(this.handleError),
+        share()
+      );
 
       this.observableRequests.set(observableKey, obs);
     }
@@ -105,9 +114,7 @@ export class WiziApiService {
     return obs;
   }
 
-
   static get<T>(url: string, params?: any): Observable<T> {
-
     if (params) {
       const searchParams = new URLSearchParams('');
 
@@ -116,7 +123,6 @@ export class WiziApiService {
           searchParams.set(key, params[key]);
         }
       }
-
 
       url += '?' + decodeURIComponent(searchParams.toString());
     }

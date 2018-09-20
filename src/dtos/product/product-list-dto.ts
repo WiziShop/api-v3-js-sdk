@@ -3,6 +3,6 @@ export interface ProductListDto {
   sku: string;
   label: string;
   stock: null | number;
-  weight: number
+  weight: number;
   status: string;
 }
