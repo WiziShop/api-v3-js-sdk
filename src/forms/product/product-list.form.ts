@@ -14,9 +14,6 @@ export class ProductListForm {
       sort?: string;
     }
   ): Observable<ListDto<ProductListDto>> {
-    return WiziApiService.get<ListDto<ProductListDto>>(
-      `/shops/${shopId}/products`,
-      params
-    );
+    return WiziApiService.get<ListDto<ProductListDto>>(`/shops/${shopId}/products`, params);
   }
 }

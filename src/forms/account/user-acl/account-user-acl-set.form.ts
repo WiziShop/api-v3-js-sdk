@@ -11,9 +11,6 @@ export class AccountUserAclSetForm {
       write_permission: boolean;
     }>
   ): Observable<UserAccountAclDto[]> {
-    return WiziApiService.put<UserAccountAclDto[]>(
-      `/accounts/${acId}/users/${userId}/acl`,
-      resources
-    );
+    return WiziApiService.put<UserAccountAclDto[]>(`/accounts/${acId}/users/${userId}/acl`, resources);
   }
 }

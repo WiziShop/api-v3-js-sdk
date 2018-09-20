@@ -4,8 +4,6 @@ import { UserAccountAclDto } from '../../../dtos/user/account-acl/user-account-a
 
 export class AccountUserAclAllForm {
   static submit(acId: number, userId: number): Observable<UserAccountAclDto[]> {
-    return WiziApiService.get<UserAccountAclDto[]>(
-      `/accounts/${acId}/users/${userId}/acl`
-    );
+    return WiziApiService.get<UserAccountAclDto[]>(`/accounts/${acId}/users/${userId}/acl`);
   }
 }

@@ -23,13 +23,8 @@ export class WiziApiService {
     return this.token;
   }
 
-  static refreshTokenIfExpiresSoon(
-    offsetDays = 5
-  ): Observable<RefreshTokenDto> {
-    if (
-      this.token &&
-      JwtService.isTokenExpired(this.token, offsetDays * 86400)
-    ) {
+  static refreshTokenIfExpiresSoon(offsetDays = 5): Observable<RefreshTokenDto> {
+    if (this.token && JwtService.isTokenExpired(this.token, offsetDays * 86400)) {
       return this.get<RefreshTokenDto>('/auth/refresh_token').pipe(
         map(dto => {
           this.setToken(dto.token);
@@ -59,12 +54,7 @@ export class WiziApiService {
     return null;
   }
 
-  private static getObservableKey(
-    method: string,
-    url: string,
-    body?: any,
-    headers?: any
-  ) {
+  private static getObservableKey(method: string, url: string, body?: any, headers?: any) {
     const data = {
       url: url,
       body: body,
@@ -90,12 +80,7 @@ export class WiziApiService {
       request.headers['Authorization'] = 'Bearer ' + this.token;
     }
 
-    const observableKey = this.getObservableKey(
-      url,
-      request.method,
-      request.body,
-      request.headers
-    );
+    const observableKey = this.getObservableKey(url, request.method, request.body, request.headers);
 
     let obs = this.observableRequests.get(observableKey);
 

@@ -3,14 +3,8 @@ import { Observable } from 'rxjs';
 import { ProductDto } from '../../dtos/product/product.dto';
 
 export class ProductCreateForm {
-  static submit(
-    shopId: number,
-    product: ProductFormStructure
-  ): Observable<ProductDto> {
-    return WiziApiService.post<ProductDto>(
-      `/shops/${shopId}/products`,
-      product
-    );
+  static submit(shopId: number, product: ProductFormStructure): Observable<ProductDto> {
+    return WiziApiService.post<ProductDto>(`/shops/${shopId}/products`, product);
   }
 }
 

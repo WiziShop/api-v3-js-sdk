@@ -19,14 +19,7 @@ import {
   ACCOUNT_USER_RESOURCE_SETTINGS_SYSTEM
 } from '../account-user-resource';
 
-export type AccountRoleType =
-  | 'admin'
-  | 'in_charge'
-  | 'editor'
-  | 'logistician'
-  | 'marketing_manager'
-  | 'designer'
-  | 'custom';
+export type AccountRoleType = 'admin' | 'in_charge' | 'editor' | 'logistician' | 'marketing_manager' | 'designer' | 'custom';
 
 export interface AccountUserBaseModel {
   value: AccountRoleType;

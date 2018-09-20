@@ -4,8 +4,6 @@ import { AccountUserDto } from '../../../dtos/account/user/account-user.dto';
 
 export class AccountUserGetForm {
   static submit(acId: number, userId: number): Observable<AccountUserDto> {
-    return WiziApiService.get<AccountUserDto>(
-      `/accounts/${acId}/users/${userId}`
-    );
+    return WiziApiService.get<AccountUserDto>(`/accounts/${acId}/users/${userId}`);
   }
 }
