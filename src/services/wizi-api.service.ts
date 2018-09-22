@@ -72,7 +72,7 @@ export class WiziApiService {
       request.headers = {};
     }
 
-    request.headers['Content-type'] = 'application/json';
+    request.headers['Content-Type'] = 'application/json';
 
     request.responseType = 'json';
 
@@ -119,14 +119,14 @@ export class WiziApiService {
 
   static post<T>(url: string, body: Object): Observable<T> {
     return this.request<T>(url, {
-      body: JSON.stringify(body),
+      body: body,
       method: 'POST'
     });
   }
 
   static put<T>(url: string, body: Object): Observable<T> {
     return this.request<T>(url, {
-      body: JSON.stringify(body),
+      body: body,
       method: 'PUT'
     });
   }
