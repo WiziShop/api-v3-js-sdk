@@ -117,14 +117,14 @@ export class WiziApiService {
     });
   }
 
-  static post<T>(url: string, body: Object): Observable<T> {
+  static post<T>(url: string, body?: Object): Observable<T> {
     return this.request<T>(url, {
       body: body,
       method: 'POST'
     });
   }
 
-  static put<T>(url: string, body: Object): Observable<T> {
+  static put<T>(url: string, body?: Object): Observable<T> {
     return this.request<T>(url, {
       body: body,
       method: 'PUT'

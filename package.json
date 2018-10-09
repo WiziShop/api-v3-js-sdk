@@ -1,6 +1,6 @@
 {
   "name": "@wizishop/api-v3-js-sdk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Typescript client (browser) for api-doc.wizishop.com",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -42,11 +42,11 @@
     "tslint": "^5.11.0"
   },
   "dependencies": {
-    "rxjs": "^6.3.2",
+    "rxjs": "^6.3.3",
     "typescript": "^2.9.2"
   },
   "peerDependencies": {
-    "rxjs": "^6.3.2",
+    "rxjs": "^6.3.3",
     "typescript": "^2.9.2"
   }
 }
