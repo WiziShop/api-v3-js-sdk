@@ -6,7 +6,7 @@ import { InvoiceCommissionListDto } from '../../../../dtos/invoice/Commission/in
 export class InvoiceCommissionListGetForm {
   static submit(acId: number, invoiceId: number, page: number, limit: number): Observable<ListDto<InvoiceCommissionListDto>> {
     return WiziApiService.get<ListDto<InvoiceCommissionListDto>>(
-      `/accounts/${acId}/invoices/${invoiceId}?limit=` + limit + `&page=` + page
+      `/accounts/${acId}/invoices/${invoiceId}/commissions?limit=` + limit + `&page=` + page
     );
   }
 }
