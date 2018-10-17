@@ -12,4 +12,5 @@ export interface InvoiceCommissionListDto {
   currency_iso_code: string;
   currency_change_rate: number;
   created_at: Date;
+  shop_name: string;
 }
