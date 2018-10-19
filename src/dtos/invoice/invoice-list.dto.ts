@@ -1,5 +1,6 @@
 export interface InvoiceListDto {
   id: number;
+  invoice_number: string;
   ac_id: number;
   status: string;
   created_at: Date;
