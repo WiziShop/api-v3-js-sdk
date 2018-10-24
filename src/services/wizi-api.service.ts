@@ -69,12 +69,14 @@ export class WiziApiService {
     request.url = this.apiBaseUrl + url;
 
     if (!request.headers) {
-      request.headers = {};
+      request.headers = {
+        'Content-Type': 'application/json'
+      };
     }
 
-    request.headers['Content-Type'] = 'application/json';
-
-    request.responseType = 'json';
+    if (!request.responseType) {
+      request.responseType = 'json';
+    }
 
     if (this.token) {
       request.headers['Authorization'] = 'Bearer ' + this.token;

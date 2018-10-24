@@ -1,4 +1,4 @@
-import { ShopDto } from '../..';
+import { ShopDto } from '../shop/shop.dto';
 
 export interface GroupDto {
   id: number;
