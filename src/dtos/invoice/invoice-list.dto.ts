@@ -6,6 +6,7 @@ export interface InvoiceListDto {
   created_at: Date;
   paid_at: Date;
   due_at: Date;
+  levy_start_at: Date;
   type: string;
   total_price_tax_excluded: string;
   tax_percent: number;

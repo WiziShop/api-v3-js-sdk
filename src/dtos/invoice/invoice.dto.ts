@@ -10,6 +10,7 @@ export interface InvoiceDto {
   created_at: Date;
   paid_at: Date;
   due_at: Date;
+  levy_start_at: Date;
   invoiced_to_name: string;
   invoiced_to_address: string;
   invoiced_to_vat_number: number;
