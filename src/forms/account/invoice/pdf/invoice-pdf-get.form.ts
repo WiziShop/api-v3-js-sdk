@@ -5,7 +5,10 @@ export class InvoicePdfGetForm {
   static submit(acId: number, invoiceId: number): Observable<Blob> {
     return WiziApiService.request<Blob>(`/accounts/${acId}/invoices-pdf/${invoiceId}`, {
       method: 'GET',
-      responseType: 'blob'
+      responseType: 'blob',
+      headers: {
+        'Content-Type': 'application/pdf'
+      }
     });
   }
 }
