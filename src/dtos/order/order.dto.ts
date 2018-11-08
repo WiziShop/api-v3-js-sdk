@@ -44,9 +44,15 @@ export interface OrderDto {
       id: number;
       skus: [
         {
-          title: string;
-          sku: string;
+          customisations: any[];
+          id: number;
+          image_url: string;
+          price: number;
           quantity: number;
+          sku: string;
+          tax: number;
+          total_discount: number;
+          title: string;
           variations: [
             {
               title: string;
