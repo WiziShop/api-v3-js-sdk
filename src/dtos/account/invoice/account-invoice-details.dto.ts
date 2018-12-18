@@ -1,4 +1,4 @@
-export interface InvoiceDetailsDto {
+export interface AccountInvoiceDetailsDto {
   id: number;
   account_id: number;
   group_id: number;

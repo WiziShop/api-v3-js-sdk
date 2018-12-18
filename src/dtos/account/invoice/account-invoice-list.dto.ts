@@ -1,4 +1,4 @@
-export interface InvoiceListDto {
+export interface AccountInvoiceListDto {
   id: number;
   invoice_number: string;
   ac_id: number;
