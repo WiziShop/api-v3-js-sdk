@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { WiziApiService } from '../../services/wizi-api.service';
-import { OauthCodeDto } from '../../dtos/oauth/oauth-code.dto';
+import { WiziApiService } from '../../../services/wizi-api.service';
+import { OauthCodeDto } from '../../../dtos/oauth/app/oauth-code.dto';
 
 export class OauthCodeGetForm {
   static submit(shopId: number, appId: number, redirectUri: string): Observable<OauthCodeDto> {
