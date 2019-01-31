@@ -13,6 +13,8 @@ export class ShopCreateForm {
     duplicate_page: boolean = false,
     duplicate_config: boolean = false,
     duplicate_design: boolean = false,
+    domain_referer: string = null,
+    url_referer: string = null,
     ac_id: number = null,
     g_id: number = null
   ): Observable<ShopDto> {
@@ -26,6 +28,8 @@ export class ShopCreateForm {
       duplicate_page: duplicate_page,
       duplicate_config: duplicate_config,
       duplicate_design: duplicate_design,
+      domain_referer: domain_referer,
+      url_referer: url_referer,
       ac_id: ac_id,
       g_id: g_id
     });
