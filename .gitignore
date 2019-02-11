@@ -38,4 +38,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/src/index.ts
+/src/public_api.ts
+.compile

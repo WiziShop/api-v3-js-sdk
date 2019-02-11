@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "bundlerOptions": {
+    "entry": "./src/public_api.ts"
+  }
+}

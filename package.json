@@ -1,9 +1,11 @@
 {
   "name": "@wizishop/api-v3-js-sdk",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A Typescript client (browser) for api-doc.wizishop.com",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/bundles/wizishop-api-v3-js-sdk.umd.js",
+  "module": "dist/wizishop-api-v3-js-sdk.es5.js",
+  "es2015": "dist/wizishop-api-v3-js-sdk.js",
+  "typings": "dist/wizishop-api-v3-js-sdk.d.ts",
   "private": false,
   "repository": {
     "type": "git",
@@ -18,7 +20,8 @@
     "lint": "tslint -p tsconfig.json",
     "export-modules": "ts-node ./scripts/export-all-module.ts",
     "tsc": "tsc",
-    "build": "npm run export-modules && rm -rf dist && npm run tsc && rm ./src/index.ts",
+    "build:tsb": "tsb -p tsconfig.build.json",
+    "build": "npm run export-modules && rm -rf dist && npm run build:tsb && rm ./src/public_api.ts",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -38,7 +41,8 @@
     "prettier": "^1.16.1",
     "pretty-quick": "^1.10.0",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0"
+    "tslint": "^5.11.0",
+    "typescript-library-bundler": "^0.2.4"
   },
   "dependencies": {
     "rxjs": "^6.3.3",
