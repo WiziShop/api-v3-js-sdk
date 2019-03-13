@@ -5,5 +5,6 @@ export class CommentListDto {
   limit: number;
   pages: number;
   total: number;
+  total_note: number;
   results: CommentDto[];
 }
