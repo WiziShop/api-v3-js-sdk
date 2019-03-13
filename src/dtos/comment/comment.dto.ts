@@ -4,4 +4,5 @@ export class CommentDto {
   created_at: Date;
   url: string;
   email: string;
+  content: string;
 }
