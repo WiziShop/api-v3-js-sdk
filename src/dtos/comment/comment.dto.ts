@@ -5,4 +5,5 @@ export class CommentDto {
   url: string;
   email: string;
   content: string;
+  note: number;
 }
