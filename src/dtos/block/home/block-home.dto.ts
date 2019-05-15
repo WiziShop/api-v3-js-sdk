@@ -3,6 +3,5 @@ export interface BlockHomeDto {
   content: string;
   json: Array<any>;
   title: string;
-  og_title: string;
   description: string;
 }
