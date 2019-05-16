@@ -4,7 +4,7 @@ import { OrderSupplierOrderDto } from '../../../dtos/order/supplier-order/order-
 
 export class OrderSupplierOrderSetForm {
   static submit(shopId: number, orderId: number, id: number, supplierName: string, supplierId: string): Observable<OrderSupplierOrderDto> {
-    return WiziApiService.put<OrderSupplierOrderDto>(`/shops/${shopId}/order/${orderId}/supplierOrders/${id}`, {
+    return WiziApiService.put<OrderSupplierOrderDto>(`/shops/${shopId}/order/${orderId}/supplier-orders/${id}`, {
       supplier_name: supplierName,
       supplier_order_id: supplierId
     });
