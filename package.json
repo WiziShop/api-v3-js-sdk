@@ -1,6 +1,6 @@
 {
   "name": "@wizishop/api-v3-js-sdk",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "A Typescript client (browser) for api-doc.wizishop.com",
   "main": "dist/bundles/wizishop-api-v3-js-sdk.umd.js",
   "module": "dist/wizishop-api-v3-js-sdk.es5.js",
