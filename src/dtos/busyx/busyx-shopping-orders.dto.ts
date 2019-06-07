@@ -1,6 +1,6 @@
 export interface BusyXShippingOrdersDto {
-  shippingOptions: Array<{
-    shippingService: {
+  shipping_options: Array<{
+    shipping_service: {
       id: number;
       delay: string;
       name: string;
