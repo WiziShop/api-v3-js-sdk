@@ -1,14 +1,12 @@
 import { Observable } from 'rxjs';
 import { WiziApiService } from '../../services/wizi-api.service';
-import { OrderDto } from '../../dtos/order/order.dto';
 
 export class BusyXOrderCreateForm {
-  static submit(shopId: number, order: OrderDto, payment_id: number, carrier_id: number, shipping_fees: number): Observable<boolean> {
-    return WiziApiService.post<boolean>(`/shops/${shopId}/busyx/order/create`, {
-      order: order,
+  static submit(shop_id: number, order_id: number, payment_id: number, carrier_id: number): Observable<boolean> {
+    return WiziApiService.post<boolean>(`/shops/${shop_id}/busyx/order/create`, {
+      order_id: order_id,
       payment_id: payment_id,
-      carrier_id: carrier_id,
-      shipping_fees: shipping_fees
+      carrier_id: carrier_id
     });
   }
 }
