@@ -6,7 +6,8 @@ export interface BusyXOrderPriceDto {
 }
 
 interface BusyXProductPriceDto {
-  price_tax_included: number;
-  price_tax_excluded: number;
+  unit_price_tax_included: number;
+  unit_price_tax_excluded: number;
+  quantity: number;
   tax: number;
 }
