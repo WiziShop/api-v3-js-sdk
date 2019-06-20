@@ -16,7 +16,9 @@ export class ShopCreateForm {
     domain_referer: string = null,
     url_referer: string = null,
     ac_id: number = null,
-    g_id: number = null
+    g_id: number = null,
+    timespent: number = 0,
+    prospect: string = null
   ): Observable<ShopDto> {
     return WiziApiService.post<ShopDto>(`/shops`, {
       name: name,
@@ -31,7 +33,9 @@ export class ShopCreateForm {
       domain_referer: domain_referer,
       url_referer: url_referer,
       ac_id: ac_id,
-      g_id: g_id
+      g_id: g_id,
+      timespent: timespent,
+      prospect: prospect
     });
   }
 }

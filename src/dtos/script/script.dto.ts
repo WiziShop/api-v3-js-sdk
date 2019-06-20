@@ -2,28 +2,11 @@ export interface ScriptDto {
   id: number;
   name: string;
   content: string;
-  page: string;
-  position: string;
-  device: string;
+  page: ScriptPageType;
+  position: ScriptPositionType;
+  device: ScriptDeviceType;
 }
 
-export const ScriptPage = {
-  partout: 'partout',
-  commande: 'commande',
-  accueil: 'accueil',
-  info: 'info',
-  produit: 'produit',
-  blog: 'blog'
-};
-
-export const ScriptPosition = {
-  head: 'head',
-  debut_body: 'debut_body',
-  fin_body: 'fin_body'
-};
-
-export const ScriptDevice = {
-  all: 'all',
-  desktop: 'desktop',
-  mobile: 'mobile'
-};
+export type ScriptPageType = 'all' | 'order' | 'home' | 'page' | 'product' | 'blog' | 'before_bank';
+export type ScriptPositionType = 'head' | 'after_begin_body' | 'before_end_body';
+export type ScriptDeviceType = 'all' | 'desktop' | 'mobile';
