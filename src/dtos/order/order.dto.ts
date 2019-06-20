@@ -1,3 +1,5 @@
+import { OrderServiceDto } from './order-service.dto';
+
 export interface OrderDto {
   id: number;
   public_id: string;
@@ -42,6 +44,15 @@ export interface OrderDto {
   shippings: [
     {
       id: number;
+      code: string;
+      mode: number;
+      name: string;
+      pickup_number: string;
+      price: string;
+      price_tax_excluded: string;
+      prod_id: string;
+      tax: number;
+      tracking_number: string;
       skus: [
         {
           customisations: any[];
@@ -70,4 +81,5 @@ export interface OrderDto {
     sms: boolean;
     message: string;
   };
+  service_details: OrderServiceDto[];
 }
