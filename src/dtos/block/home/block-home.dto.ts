@@ -4,4 +4,5 @@ export interface BlockHomeDto {
   json: Array<any>;
   title: string;
   description: string;
+  preview: boolean;
 }
