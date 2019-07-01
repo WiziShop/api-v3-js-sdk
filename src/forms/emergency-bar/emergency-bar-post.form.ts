@@ -23,7 +23,7 @@ export class EmergencyBarPostForm {
       pattern: pattern,
       text: text,
       button_text: button_text,
-      button_color: button_text,
+      button_color: button_color,
       button_color_text: button_color_text,
       button_link: button_link,
       placement: placement,
