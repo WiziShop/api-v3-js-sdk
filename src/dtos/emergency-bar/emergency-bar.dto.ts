@@ -9,6 +9,7 @@ export interface EmergencyBarDto {
   button_link: string;
   placement: string;
   page: string;
+  preview: boolean;
   timer: string;
   timer_date: string;
   date: string;
