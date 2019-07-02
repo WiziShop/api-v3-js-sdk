@@ -4,7 +4,7 @@ import { WiziApiService } from '../../services/wizi-api.service';
 export class BrandsDistributionSetApiKeyForm {
   static submit(shopId: number, apiKey: string, password: string): Observable<boolean> {
     return WiziApiService.post<boolean>(`/shops/${shopId}/brandsdistribution`, {
-      apiKey: apiKey,
+      api_key: apiKey,
       password: password
     });
   }
