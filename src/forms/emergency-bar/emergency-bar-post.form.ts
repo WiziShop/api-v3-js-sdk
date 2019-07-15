@@ -14,8 +14,6 @@ export class EmergencyBarPostForm {
     button_link: string,
     placement: string,
     page: string,
-    timer: string,
-    timer_date: string,
     preview: boolean
   ): Observable<EmergencyBarDto> {
     return WiziApiService.post<EmergencyBarDto>(`/shops/${shopId}/emergency-bar`, {
@@ -28,8 +26,6 @@ export class EmergencyBarPostForm {
       button_link: button_link,
       placement: placement,
       page: page,
-      timer: timer,
-      timer_date: timer_date,
       preview: preview
     });
   }
