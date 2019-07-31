@@ -14,11 +14,13 @@ export class OrderAdvantageStructure {
   custom_text: string;
   total_amount: number;
   send_mail: boolean;
+  oa_preview: boolean;
   orderAdvantageDetails: OrderAdvantageDetailStructure[];
 }
 
 export class OrderAdvantageDetailStructure {
   price_tax_excluded: number;
   tax: number;
+  price: number;
   title: string;
 }

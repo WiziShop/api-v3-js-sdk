@@ -16,5 +16,6 @@ export interface OrderAdvantageDetailDto {
   id_shop: number;
   price_tax_excluded: number;
   tax: number;
+  price: number;
   title: string;
 }

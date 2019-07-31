@@ -8,4 +8,9 @@ export interface ShopDto {
   plan: string;
   domain: string;
   url: string;
+  phone?: string;
+  zip_code?: string;
+  city?: string;
+  address?: string;
+  logo_url?: string;
 }
