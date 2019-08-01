@@ -1,6 +1,7 @@
 export interface ShopDto {
   id: number;
   account_id: number;
+  group_id: number;
   name: string;
   locale: string;
   currency: string;
