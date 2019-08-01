@@ -12,7 +12,11 @@ export class OrderAdvantageListForm {
     orderId?: number,
     publicId?: boolean
   ): Observable<OrderAdvantageListDto> {
-    page += 1;
+    if (Number(page)) {
+      page = Number(page) + 1;
+    } else {
+      page = 0;
+    }
     order = order === 'desc' ? '-' : '';
     let url = '/shops/' + idShop + '/order-advantage?page=' + page + '&limit=' + limit + '&sort=' + order + sort;
     if (orderId) {
