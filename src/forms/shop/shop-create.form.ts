@@ -13,8 +13,7 @@ export class ShopCreateForm {
     duplicate_page: boolean = false,
     duplicate_config: boolean = false,
     duplicate_design: boolean = false,
-    domain_referer: string = null,
-    url_referer: string = null,
+    referer: ShopCreateRefererStructure = null,
     ac_id: number = null,
     g_id: number = null,
     timespent: number = 0,
@@ -30,12 +29,29 @@ export class ShopCreateForm {
       duplicate_page: duplicate_page,
       duplicate_config: duplicate_config,
       duplicate_design: duplicate_design,
-      domain_referer: domain_referer,
-      url_referer: url_referer,
+      referer: referer,
       ac_id: ac_id,
       g_id: g_id,
       timespent: timespent,
       prospect: prospect
     });
   }
+}
+
+export class ShopCreateRefererStructure {
+  ip: string = '';
+  referer: string = '';
+  utm_source: string = '';
+  utm_medium: string = '';
+  utm_campaign: string = '';
+  utm_content: string = '';
+  first_utm_source: string = '';
+  first_utm_medium: string = '';
+  first_utm_campaign: string = '';
+  first_utm_content: string = '';
+  form: string = '';
+  form_url: string = '';
+  afmc: string = '';
+  tracking: string[] = [];
+  utm_tracking: string[] = [];
 }
