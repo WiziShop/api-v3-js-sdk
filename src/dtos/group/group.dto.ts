@@ -6,4 +6,5 @@ export interface GroupDto {
   name: string;
   color: string;
   shops: Array<ShopDto>;
+  type: string;
 }

@@ -5,6 +5,7 @@ export interface UserShopDto {
   group_id: number;
   group_name: string;
   group_color: string;
+  group_type: string;
   shop_id: number;
   shop_name: string;
   role: string;
