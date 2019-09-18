@@ -18,7 +18,7 @@ export class OrderAdvantageListForm {
       page = 0;
     }
     order = order === 'desc' ? '-' : '';
-    let url = '/shops/' + idShop + '/order-advantage?page=' + page + '&limit=' + limit + '&sort=' + order + sort;
+    let url = '/shops/' + idShop + '/store-credits?page=' + page + '&limit=' + limit + '&sort=' + order + sort;
     if (orderId) {
       url += '&orderId=' + orderId + '&publicId=' + publicId;
     }

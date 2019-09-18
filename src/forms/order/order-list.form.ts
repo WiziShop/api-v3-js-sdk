@@ -11,7 +11,9 @@ export class OrderListForm {
     }
 
     order = order === 'desc' ? '-' : '';
-    const url = '/shops/' + idShop + '/orders?page=' + page + '&limit=' + limit + '&status_code=99&sort=' + order + sort;
+    //Etat min payé : 11 - voir _c\Commande
+    const url =
+      '/shops/' + idShop + '/orders?page=' + page + '&limit=' + limit + '&sort=' + order + sort + '&from_status_code=11&to_status_code=50';
 
     return WiziApiService.get<OrderListDto>(url);
   }
