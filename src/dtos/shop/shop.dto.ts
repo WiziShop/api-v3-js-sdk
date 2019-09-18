@@ -1,3 +1,5 @@
+import { PlanType } from '../../types/plan.type';
+
 export interface ShopDto {
   id: number;
   account_id: number;
@@ -6,7 +8,7 @@ export interface ShopDto {
   locale: string;
   currency: string;
   is_dropizi: boolean;
-  plan: string;
+  plan: PlanType;
   domain: string;
   url: string;
   phone?: string;
