@@ -9,8 +9,8 @@ export class OrderListForm {
     limit: number,
     sort: string,
     order: string,
-    from_status_code: number,
-    to_status_code: number
+    from_status_code?: number,
+    to_status_code?: number
   ): Observable<OrderListDto> {
     if (Number(page)) {
       page = Number(page) + 1;
