@@ -17,7 +17,9 @@ export class OrderListForm {
     } else {
       page = 0;
     }
-    return WiziApiService.get<OrderListDto>(`/shops/${idShop}/orders/`, {
+    order = order === 'desc' ? '-' : '';
+
+    return WiziApiService.get<OrderListDto>(`/shops/${idShop}/orders`, {
       page: page,
       limit: limit,
       sort: order + sort,
