@@ -18,7 +18,8 @@ export class ShopCreateForm {
     g_id: number = null,
     timespent: number = 0,
     prospect: string = null,
-    group_type: string = null
+    group_type: string = null,
+    prod_ids = []
   ): Observable<ShopDto> {
     return WiziApiService.post<ShopDto>(`/shops`, {
       name: name,
@@ -35,7 +36,8 @@ export class ShopCreateForm {
       g_id: g_id,
       timespent: timespent,
       prospect: prospect,
-      group_type: group_type
+      group_type: group_type,
+      prod_ids: prod_ids
     });
   }
 }
