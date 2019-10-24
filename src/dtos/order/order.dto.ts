@@ -13,6 +13,8 @@ export interface OrderDto {
   total_products_amount: number;
   total_shipping_amount: number;
   total_reduc_amount: number;
+  discount_code?: string;
+  discount_code_amount: number;
   total_fees: number;
   payment_mode: number;
   payment_type: number;
