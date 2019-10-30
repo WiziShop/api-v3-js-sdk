@@ -3,6 +3,8 @@ import { OauthAppTokenDto } from '../../dtos/oauth/app/oauth-app-token.dto';
 import { first, switchMap } from 'rxjs/operators';
 import { OauthAppTokenCreateForm } from './app/oauth-app-token-create.form';
 
+declare const window: any;
+
 export class OauthSignInWithPopupForm {
   static oauthBaseUrl = 'https://admin.wizishop.com/v3/oauth-app/authorize';
 
