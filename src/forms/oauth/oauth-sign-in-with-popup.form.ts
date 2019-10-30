@@ -9,7 +9,7 @@ export class OauthSignInWithPopupForm {
   static submit(appId: number): Observable<OauthAppTokenDto> {
     const options = {
       width: 450,
-      height: 540,
+      height: 600,
       left: 0,
       top: 0,
       toolbar: 0,
@@ -55,6 +55,9 @@ export class OauthSignInWithPopupForm {
             });
           }
           if (event.data.code) {
+            if (opener) {
+              opener.close();
+            }
             return OauthAppTokenCreateForm.submit(appId, document.location.origin, event.data.code);
           }
         } else if (event.closed) {
@@ -73,3 +76,14 @@ export class OauthSignInWithPopupForm {
     );
   }
 }
+
+function checkRedirectUriWithCode() {
+  if (window.opener) {
+    const urlSearchParams = new URLSearchParams(document.location.search);
+    if (urlSearchParams.has('code')) {
+      window.opener.postMessage({ code: urlSearchParams.get('code') }, document.location.origin);
+    }
+  }
+}
+
+checkRedirectUriWithCode();
