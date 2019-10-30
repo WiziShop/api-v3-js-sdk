@@ -3,8 +3,6 @@ import { OauthAppTokenDto } from '../../dtos/oauth/app/oauth-app-token.dto';
 import { first, switchMap } from 'rxjs/operators';
 import { OauthAppTokenCreateForm } from './app/oauth-app-token-create.form';
 
-declare const window: any;
-
 export class OauthSignInWithPopupForm {
   static oauthBaseUrl = 'https://admin.wizishop.com/v3/oauth-app/authorize';
 
@@ -79,13 +77,13 @@ export class OauthSignInWithPopupForm {
   }
 }
 
-function checkRedirectUriWithCode() {
-  if (window.opener) {
-    const urlSearchParams = new URLSearchParams(document.location.search);
-    if (urlSearchParams.has('code')) {
-      window.opener.postMessage({ code: urlSearchParams.get('code') }, document.location.origin);
+if (typeof (<any>window) !== 'undefined') {
+  (function(win) {
+    if (win && win.opener) {
+      const urlSearchParams = new URLSearchParams(document.location.search);
+      if (urlSearchParams.has('code')) {
+        win.opener.postMessage({ code: urlSearchParams.get('code') }, document.location.origin);
+      }
     }
-  }
+  })(<any>window);
 }
-
-checkRedirectUriWithCode();
