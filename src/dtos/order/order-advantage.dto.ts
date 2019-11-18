@@ -7,6 +7,7 @@ export interface OrderAdvantageDto {
   created_at: string;
   custom_text: string;
   total_amount: number;
+  id_legal?: number;
   orderAdvantageDetails?: OrderAdvantageDetailDto[];
 }
 
