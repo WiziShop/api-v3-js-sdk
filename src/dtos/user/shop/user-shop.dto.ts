@@ -8,6 +8,7 @@ export interface UserShopDto {
   group_type: string;
   shop_id: number;
   shop_name: string;
+  shop_status: string;
   role: string;
   locale: string;
   is_dropizi: boolean;
