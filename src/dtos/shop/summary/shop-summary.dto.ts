@@ -9,4 +9,5 @@ export interface ShopSummaryDto {
   number_of_clients: number;
   number_of_orders: number;
   number_of_register_newsletters: number;
+  group_plan_close_price: number;
 }
