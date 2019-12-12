@@ -3,7 +3,7 @@ import { WiziApiService } from '../../../services/wizi-api.service';
 
 export class ShopSettingStatusTokenPostForm {
   static submit(idShop: number, shopSettingStatusToken: ShopSettingStatusTokenStructure): Observable<null> {
-    return WiziApiService.put<null>(`/shops/${idShop}/setting-status-token`, shopSettingStatusToken);
+    return WiziApiService.post<null>(`/shops/${idShop}/setting-status-token`, shopSettingStatusToken);
   }
 }
 
