@@ -11,4 +11,6 @@ export interface UpsellStatDto {
   total_accepted: number;
   total_declined: number;
   total_timer_ended: number;
+  conversion_rate: number;
+  total_revenue: number;
 }

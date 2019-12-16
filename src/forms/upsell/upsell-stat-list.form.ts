@@ -8,7 +8,8 @@ export class UpsellStatListForm {
   static submit(
     shopId: number,
     params: {
-      prod_upsell_id?: number;
+      prod_upsell_id: number;
+      sort?: string;
       limit?: number;
       page?: number;
     }
