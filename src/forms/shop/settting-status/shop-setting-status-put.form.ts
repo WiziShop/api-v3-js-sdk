@@ -8,5 +8,5 @@ export class ShopSettingStatusPutForm {
 }
 
 class ShopSettingStatusStructure {
-  token: string;
+  setting_status: string;
 }
