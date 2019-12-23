@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 export class DiscountGetCsvForm {
   static submit(idShop: number, discountId: number): Observable<Blob> {
-    return WiziApiService.request(`/shops/${idShop}/discount/${discountId}/csv`, {
+    return WiziApiService.request(`/shops/${idShop}/discount/csv/${discountId}`, {
       method: 'GET',
       responseType: 'blob',
       headers: {
