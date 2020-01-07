@@ -12,20 +12,14 @@ export class DiscountListForm {
     state?: string,
     search?: string
   ): Observable<DiscountListDto> {
-    if (Number(page)) {
-      page = Number(page) + 1;
-    } else {
-      page = 0;
-    }
+    page = Number(page) ? Number(page) + 1 : 0;
     order = order === 'desc' ? '-' : '';
-    let url = '/shops/' + idShop + '/discount?page=' + page + '&limit=' + limit + '&sort=' + order + sort;
-    if (state) {
-      url += '&state=' + state;
-    }
-    if (search) {
-      url += '&search=' + search;
-    }
-
-    return WiziApiService.get<DiscountListDto>(url);
+    const params = {
+      page: page,
+      order: order,
+      state: state,
+      search: search
+    };
+    return WiziApiService.get<DiscountListDto>(`/shops/${idShop}/discount`, params);
   }
 }

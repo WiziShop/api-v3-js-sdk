@@ -12,12 +12,11 @@ export class DiscountDto {
   exclude_discount_prod: boolean;
   total_nb_used: number;
   state?: string;
-  discount_tag_code?: string;
-  generate_code_number?: number;
+  discount_tag?: string;
+  discount_codes_number?: number;
   start_discount_valid_date: string;
   end_discount_valid_date: string;
   created_at?: string;
   updated_at?: string;
   discount_config: DiscountConfigDto;
-  discount_codes?: DiscountCodeDto[];
 }
