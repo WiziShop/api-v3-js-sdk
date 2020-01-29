@@ -16,8 +16,8 @@ export class DiscountListForm {
     order = order === 'desc' ? '-' : '';
     const params = {
       page: page,
-      order: order,
       state: state,
+      sort: order + sort,
       search: search
     };
     return WiziApiService.get<DiscountListDto>(`/shops/${idShop}/discount`, params);
