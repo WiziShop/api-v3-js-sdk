@@ -19,4 +19,5 @@ export interface OrderAdvantageDetailDto {
   tax: number;
   price: number;
   title: string;
+  quantity: number;
 }
