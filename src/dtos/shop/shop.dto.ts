@@ -16,4 +16,6 @@ export interface ShopDto {
   city?: string;
   address?: string;
   logo_url?: string;
+  has_tax?: boolean;
+  template?: number;
 }
