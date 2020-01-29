@@ -1,18 +1,9 @@
-export interface NewsNotificationBlogPostDTO {
+import { NewsNotificationBlogPostVisualDTO } from './news-notification-blog-post-visual.dto';
+
+export class NewsNotificationBlogPostDTO {
   title: string;
   uri: string;
-  visual: visual;
+  visual: NewsNotificationBlogPostVisualDTO;
   meta_desc: string;
   published_at: string;
-}
-
-interface visual {
-  miniature: miniature;
-}
-
-interface miniature {
-  min410: string;
-  min620: string;
-  min870: string;
-  min1240: string;
 }
