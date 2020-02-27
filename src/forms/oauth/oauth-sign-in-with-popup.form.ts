@@ -8,7 +8,7 @@ export class OauthSignInWithPopupForm {
 
   static submit(appId: number): Observable<OauthAppTokenDto> {
     const options = {
-      width: 700,
+      width: 750,
       height: 750,
       left: 0,
       top: 0,
